@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+    <html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+
+    <div>Angiv bredden
+    <input type="text" id="Bredde">
+    </div>
+    <div>Angiv højden
+    <input type="text" id="Længde">
+    </div>
+    <button>Ligemeget</button>
+
+
+    <script>
+        document.querySelector("button").addEventListener("click", knapKlik);
+
+        function knapKlik() {
+            let Længde = document.querySelector("#Længde").value;
+            let Bredde = document.querySelector("#Bredde").value;
+            let Areal = Længde*Bredde;
+            let resultat = `Længden er ${Længde} meter og bredden er ${Bredde} meter. Arealet er ${Areal} m2`;
+            console.log(resultat);
+        }
+    </script>
+
+</body>
+</html>
