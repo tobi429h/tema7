@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+    <html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+
+   <input type="text" id="name">
+    <input type="button" id="Knappen">
+
+    <script>
+        let name = document.querySelector("#name").value;
+        window.addEventListener("load", loadSiden);
+
+
+        function loadSiden(){
+            console.log("Siden er loadet");
+            Knappen.addEventListener("click", Goddag);
+        }
+
+        function Goddag() {
+            console.log("Goddag " + name);
+        }
+    </script>
+
+</body>
+</html>
