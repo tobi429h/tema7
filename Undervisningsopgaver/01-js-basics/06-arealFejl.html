@@ -24,8 +24,18 @@
         function knapKlik() {
             let Længde = document.querySelector("#Længde").value;
             let Bredde = document.querySelector("#Bredde").value;
-            /*let Areal = Længde*Bredde;*/
-            let resultat = `Længden er ${Længde} meter og bredden er ${Bredde} meter. Arealet er ${Areal(Længde,Bredde)} m2`;
+            let a = Areal(Længde,Bredde);
+            let resultat ;
+            if (isNaN(a)){
+                resultat = "Det er ikke et tal, prøv igen!";
+            }
+            else if(a <=0){
+                resultat = "Arealet er mindre end 0! Prøv igen!"
+            }
+            else{
+                resultat = `Arealet er ${a}`;
+            }
+
             console.log(resultat);
         }
 
