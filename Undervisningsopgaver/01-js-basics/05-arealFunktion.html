@@ -24,15 +24,9 @@
         function knapKlik() {
             let Længde = document.querySelector("#Længde").value;
             let Bredde = document.querySelector("#Bredde").value;
-            /*let Areal = Længde*Bredde;*/
-            let resultat = `Længden er ${Længde} meter og bredden er ${Bredde} meter. Arealet er ${Areal(Længde,Bredde)} m2`;
+            let Areal = Længde*Bredde;
+            let resultat = `Længden er ${Længde} meter og bredden er ${Bredde} meter. Arealet er ${Areal} m2`;
             console.log(resultat);
-        }
-
-        function Areal(l,b) {
-            return  l * b;
-
-
         }
     </script>
 
