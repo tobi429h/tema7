@@ -1,0 +1,28 @@
+header {
+    border: 1px solid black;
+    text-align: center;
+}
+
+img {
+   width:100%;
+}
+
+main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    column-gap: 20px;
+    grid-row-gap: 20px;
+}
+
+article{
+     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid black;
+}
