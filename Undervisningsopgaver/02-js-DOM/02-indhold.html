@@ -31,8 +31,29 @@
 
     <script>
         const overskrift = document.querySelector("h1");
-        overskrift.textContent;
+        overskrift.textContent = "Billedegalleri";
         console.log(overskrift.textContent);
+
+        const underoverskrift = document.querySelector("h2");
+        underoverskrift.textContent = "Flotte billeder";
+        console.log(underoverskrift.textContent);
+
+        const article1H3 = document.querySelector("article:first-child h3");
+        article1H3.textContent = "Hej med dig";
+        console.log(article1H3.textContent);
+
+        const article1P = document.querySelector("article:first-child p");
+        article1P.textContent =  "Jeg synes det her er rigtigt sjovt";
+        console.log(article1P.textContent);
+
+        const article2 = document.querySelector("article:nth-child(2)");
+        article2.innerHTML = "<img src=https://placeimg.com/640/480/any <h3>Heeej igen!</h3> <p>Jeg synes det her er rigtigt <b>fedt</b>!";
+        console.log(article2.innerHTML);
+
+        const footer = document.querySelector("footer");
+        footer.innerHTML;
+        console.log(article2.footer);
+
     </script>
 </body>
 </html>
