@@ -30,9 +30,66 @@
    <footer><p>This is a footer</p></footer>
 
     <script>
+
+        /*
         const overskrift = document.querySelector("h1");
-        overskrift.textContent;
+        overskrift.textContent = "Billedegalleri";
         console.log(overskrift.textContent);
+
+        const underoverskrift = document.querySelector("h2");
+        underoverskrift.textContent = "Flotte billeder";
+        console.log(underoverskrift.textContent);
+
+        const article1H3 = document.querySelector("article:first-child h3");
+        article1H3.textContent = "Hej med dig";
+        console.log(article1H3.textContent);
+
+        const article1P = document.querySelector("article:first-child p");
+        article1P.textContent =  "Jeg synes det her er rigtigt sjovt";
+        console.log(article1P.textContent);
+
+        const article2 = document.querySelector("article:nth-child(2)");
+        article2.innerHTML = "<img src=https://placeimg.com/640/480/any <h3>Heeej igen!</h3> <p>Jeg synes det her er rigtigt <b>fedt</b>!";
+        console.log(article2.innerHTML);
+
+        const footer = document.querySelector("footer");
+        footer.innerHTML;
+        console.log(article2.footer);
+        */
+
+
+        const pic1 = document.querySelector("article:first-child img");
+        console.log(pic1);
+        pic1.src = "pic1.jpg";
+        pic1.alt = "billede af band-logo";
+
+        const pic2 = document.querySelector("article:nth-child(2) img");
+        console.log(pic2);
+        pic2.src = "pic2.jpg";
+        pic2.alt = "billede af trommer";
+
+
+        let mainSection = document.querySelector("section");
+        // new article
+        let newArticle = document.createElement("article");
+        // nyt H element
+        let overskrift = document.createElement("h3");
+        // tekst til overskriften
+        let overskriftText = document.createTextNode("Article 3");
+        // indsæt tekst i overskrift
+        overskrift.appendChild(overskriftText);
+        // tilføj overskrift til
+        newArticle.appendChild(overskrift);
+        // tilføj article til section
+        mainSection.appendChild(newArticle);
+
+        let newImg = document.createElement("img");
+        newImg.src("pic1.jpg");
+        newArticle.appendChild(newImg);
+
+
+
+
     </script>
 </body>
 </html>
