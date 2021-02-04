@@ -15,12 +15,12 @@
       <h2>Undertitelt</h2>
        <section>
 
-           <article>
+           <article class="the_shadow">
            <img src="https://placeimg.com/640/480/any">
            <h3>Article 1</h3>
            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est inventore, dignissimos neque ad libero nobis, in corporis delectus iusto quia quae assumenda quasi, voluptates accusamus, sapiente laboriosam rem deleniti! Ullam.</p>
            </article>
-           <article>
+           <article class="the_shadow">
            <img src="https://placeimg.com/640/480/any">
            <h3>Article 2</h3>
            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est inventore, dignissimos neque ad libero nobis, in corporis delectus iusto quia quae assumenda quasi, voluptates accusamus, sapiente laboriosam rem deleniti! Ullam.</p></article>
@@ -96,6 +96,8 @@
         let mainSection = document.querySelector("section");
         //ny article
         let newArticle = document.createElement("article");
+        // tilføje box shadow
+        newArticle.classList.add("the_shadow");
         //ny overskrift
         let overskrift = document.createElement("h3");
 
@@ -114,6 +116,20 @@
         newArticle.appendChild(newImg);
         newArticle.appendChild(overskrift);
         newArticle.appendChild(newP);
+
+
+        document.querySelector("article:nth-child(1)").addEventListener("mouseover", elementOverAndOut);
+        document.querySelector("article:nth-child(1)").addEventListener("mouseout", elementOverAndOut);
+        document.querySelector("article:nth-child(2)").addEventListener("mouseover", elementOverAndOut);
+        document.querySelector("article:nth-child(2)").addEventListener("mouseout", elementOverAndOut);
+        document.querySelector("article:nth-child(3)").addEventListener("mouseover", elementOverAndOut);
+        document.querySelector("article:nth-child(3)").addEventListener("mouseout", elementOverAndOut);
+
+
+        function elementOverAndOut(){
+            console.log("OVER AND OUT. This er: ",this);
+            this.classList.toggle("the_shadow");
+        }
 
 
 
