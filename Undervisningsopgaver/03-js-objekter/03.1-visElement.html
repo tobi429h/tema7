@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vis Element</title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+   <article>
+       <h3></h3>
+       <img src="" alt="">
+       <p></p>
+       <p></p>
+
+   </article>
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", start);
+        function start(){
+            console.log("DOM er loadet");
+            let dyr = {
+                "navn":"Gris",
+                "type":"Pattedyr",
+                "billede":"http://mabe-kea.dk/E19/pics/pig.png",
+                "levested":"Svinefarme"};
+
+            console.log(`navn:${dyr.navn},${dyr.type},${dyr.levested},${dyr.billede},`);
+
+            // indhold placeres i article
+            const destination = document.querySelector("article");
+
+
+            destination.querySelector("h3").textContent = dyr.navn;
+            destination.querySelector("img").src = dyr.billede;
+            destination.querySelector("p:first-of-type").textContent = dyr.type;
+            destination.querySelector("article p:nth-of-type(2)").textContent = dyr.levested;
+
+            /*
+            // variabel for text
+            const text = `Dyr: ${dyr.navn}, ${dyr.type}, ${dyr.levested}`;
+            // kalder på indhold
+            destination.querySelector("p").textContent = text;
+            destination.querySelector("img").src = dyr.billede;
+            */
+
+        }
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

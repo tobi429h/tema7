@@ -3,33 +3,47 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vis dyr</title>
+    <title>Vis Element</title>
     <link rel="stylesheet" href="">
 </head>
 
 <body>
-   <article>
+   <article id="dyr">
        <h3>Gris</h3>
+       <img src="" alt="">
        <p>Type: </p>
        <p>Levested: </p>
-       <img src="" alt="">
+
    </article>
 
     <script>
 
         document.addEventListener("DOMContentLoaded", start);
+
         function start(){
             console.log("DOM er loadet");
-            let dyr ={"navn":"Gris",
-                      "type":"Pattedyr",
-                      "billede":"http://mabe-kea.dk/E19/pics/pig.png",
-                      "levested":"Svinefarme"};
 
+            let dyr = {
+                "navn": "Gris",
+                "type": "Pattedyr",
+                "billede": "http://mabe-kea.dk/E19/pics/pig.png",
+                "levested": "Svinefarme"};
+
+        }
+        const destination = document.querySelector("#dyr");
+        const info = `navn:${dyr.navn}, type:${dyr.type}, levested:${dyr.levested}`;
+
+        destination.querySelector("h3").textContent = "Gris";
+        destination.querySelector("img").src = dyr.billede;
+        destination.querySelector("article p:nth-child(1)").textContent += `${dyr.type}`;
+        destination.querySelector("article p:nth-child(2)").textContent += `${dyr.levested}`;
+
+        /*
             let article = document.querySelector("article");
             let h3 = document.querySelector("h3");
             let img = document.querySelector("img");
-            let pType = document.querySelector("p:first-child");
-            let pLeve 0 document.querySelector("article p:nth-child");
+            let pType = document.querySelector("article p:first-child");
+            let pLeve = document.querySelector("article p:nth-child(2)");
             console.log(`navn:${dyr.navn},${dyr.type},${dyr.levested},${dyr.billede},`);
             console.log(pType);
             console.log(pLeve);
@@ -39,7 +53,7 @@
             pType.textContent = `Type: ${dyr.type}`;
             pLeve.textContent = `Levested: ${dyr.levested}`;
 
-            /*            // indhold placeres i article
+            // indhold placeres i article
             const destination = document.querySelector("article");
             // variabel for text
             const text = `Dyr: ${dyr.navn}, ${dyr.type}, ${dyr.levested}`;
@@ -47,7 +61,7 @@
             destination.querySelector("p").textContent = text;
             destination.querySelector("img").src = dyr.billede;
             */
-        }
+
 
 
 
