@@ -13,15 +13,39 @@
        <p></p>
        <img src="" alt="">
    </article>
-
+    <section id="liste"></section>
     <script>
 
-        document.addEventListener("DOMContentLoaded", start);
-        function start(){
-            console.log("DOM er loadet");
-            let dyr ={"navn":"Gris", "type":"Pattedyr", "billede":"http://mabe-kea.dk/E19/pics/pig.png",  "levested":"Svinefarme"};
-            console.log(`navn:${dyr.navn},${dyr.type},${dyr.levested},${dyr.billede},`);
 
+
+
+        document.addEventListener("DOMContentLoaded", start);
+
+
+        function start() {
+                console.log("DOM er loadet");
+
+            let dyr =[
+
+            {"navn":"Gris", "type":"Pattedyr", "billede":"http://mabe-kea.dk/E19/pics/pig.png",  "levested":"Svinefarme"},
+
+            {"navn":"Frø", "type":"Amfibie", "billede":"http://mabe-kea.dk/E19/pics/frog.png","levested":"Mosen"},
+
+            {"navn":"Ræv", "type":"Pattedyr", "billede":"http://mabe-kea.dk/E19/pics/fox.png",  "levested":"Skoven"},
+
+            {"navn":"Sild", "type":"Fisk", "billede":"http://mabe-kea.dk/E19/pics/sild.jpg", "levested":"Havet"},
+
+            {"navn":"Krokodille", "type":"Krybdyr", "billede":"http://mabe-kea.dk/E19/pics/kroko.jpg",  "levested":"Sumpen"},
+           ];
+
+            console.log(dyr);
+
+            }
+
+
+
+
+            /*
             // indhold placeres i article
             const destination = document.querySelector("article");
             // variabel for text
@@ -29,8 +53,9 @@
             // kalder på indhold
             destination.querySelector("p").textContent = text;
             destination.querySelector("img").src = dyr.billede;
+            */
 
-        }
+
 
 
 
