@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vis dyr</title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+   <article>
+       <h3>Gris</h3>
+       <p>Type: </p>
+       <p>Levested: </p>
+       <img src="" alt="">
+   </article>
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", start);
+        function start(){
+            console.log("DOM er loadet");
+            let dyr ={"navn":"Gris",
+                      "type":"Pattedyr",
+                      "billede":"http://mabe-kea.dk/E19/pics/pig.png",
+                      "levested":"Svinefarme"};
+
+            let article = document.querySelector("article");
+            let h3 = document.querySelector("h3");
+            let img = document.querySelector("img");
+            let pType = document.querySelector("p:first-child");
+            let pLeve 0 document.querySelector("article p:nth-child");
+            console.log(`navn:${dyr.navn},${dyr.type},${dyr.levested},${dyr.billede},`);
+            console.log(pType);
+            console.log(pLeve);
+
+            h3.textContent = `${dyr.navn}`;
+            img.src = `${dyr.billede}`;
+            pType.textContent = `Type: ${dyr.type}`;
+            pLeve.textContent = `Levested: ${dyr.levested}`;
+
+            /*            // indhold placeres i article
+            const destination = document.querySelector("article");
+            // variabel for text
+            const text = `Dyr: ${dyr.navn}, ${dyr.type}, ${dyr.levested}`;
+            // kalder på indhold
+            destination.querySelector("p").textContent = text;
+            destination.querySelector("img").src = dyr.billede;
+            */
+        }
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
