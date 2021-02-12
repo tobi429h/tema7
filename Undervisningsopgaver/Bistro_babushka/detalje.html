@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single view</title>
+    <link rel="stylesheet" href="">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Stalinist+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/fav_icon32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/fav_icon16x16.png">
+
+    <style>
+
+        img {
+            width: 90%;
+            height: 60%;
+            margin: 0 auto;
+            display: block;
+            border: solid 1px black;
+            border-radius: 10px;
+            margin-top: 3vw;
+        }
+
+        article {
+            border: solid 1px black;
+            border-radius: 10px;
+        }
+
+
+        main {
+            margin: 0 auto;
+            max-width: 1000px;
+        }
+
+        h1 {
+            color: black;
+            margin-top: 1vw;
+            margin-left: 1vw;
+            margin-bottom: 1.5vw;
+            font-family: 'Stalinist One', cursive;
+            text-shadow: 3px 3px 10px red;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+            padding-bottom: 1vw;
+            font-family: 'Stalinist One', cursive;
+            text-shadow: 3px 3px 10px red;
+            font-size: 1rem;
+        }
+
+        h3 {
+            padding-left: 2vw;
+            font-size: 1rem;
+        }
+
+        p {
+            padding-left: 0.3vw;
+            font-family: 'Ubuntu', sans-serif;
+            font-weight: 400;
+            padding-bottom: 1.5vw;
+
+        }
+        button {
+            margin-top: 2vw;
+            margin-bottom: 1vw;
+            margin-left: 2vw;
+            margin-right: 2vw;
+            color: black;
+            border-radius: 10px;
+            padding: 0.5vw 0.5vw;
+            font-family: 'Stalinist One', cursive;
+            font-size: 0.8rem;
+        }
+
+        article  {
+            background-color: rgb(65, 105, 225, 0.5);
+        }
+
+        footer {
+            padding-top: 3vw;
+        }
+        footer img {
+            width: 1%;
+            height: 1%;
+        }
+        footer h2 {
+            font-size: 0.2rem;
+        }
+
+    </style>
+
+</head>
+
+<body>
+   <main id="liste">
+          <h1>Bistro Babushka</h1>
+           <article class="the_shadow ret">
+               <img src="" alt="" class="billede">
+               <h2 class="navn"></h2>
+               <p class="kategori"></p>
+               <p class="langbeskrivelse"></p>
+               <p class="oprindelsesregion"></p>
+               <h3 class="pris"></h3>
+           </article>
+           <button class="tilbage">Tilbage</button>
+    </main>
+    <script>
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get("id");
+
+        const medieurl = "https://babushka-dd8a.restdb.io/media/";
+
+        let mad;
+
+        const myHeaders = {
+            "x-apikey": "600ec2fb1346a1524ff12de4"
+            }
+
+        console.log("ID", id);
+        document.addEventListener("DOMContentLoaded", loadJSON)
+
+        async function loadJSON(){
+            const JSONData = await fetch(`https://babushka-dd8a.restdb.io/rest/menu/${id}`,{
+                headers: myHeaders
+            });
+
+        mad = await JSONData.json();
+        console.log("Mad", mad);
+        visMad(mad);
+        }
+
+        function visMad(){
+            document.querySelector(".billede").src = medieurl + mad.billede;
+            document.querySelector(".navn").textContent = mad.navn;
+//            document.querySelector(".kategori").textContent = mad.kategori;
+            document.querySelector(".langbeskrivelse").textContent = mad.langbeskrivelse;
+            document.querySelector(".oprindelsesregion").textContent = "Region: " + mad.oprindelsesregion;
+            document.querySelector(".pris").textContent = mad.pris + ",-";
+            document.querySelector("button").addEventListener("click", tilbageTilForsiden);
+        }
+
+        function tilbageTilForsiden(){
+            history.back();
+        }
+
+
+    </script>
+
+    <footer>
+        <h2>
+            Bistro Babushka
+        </h2>
+        <h2>All rights reserved <img src="img/copyright_symbol.png" alt="Copyright"></h2>
+
+    </footer>
+
+</body>
+</html>
